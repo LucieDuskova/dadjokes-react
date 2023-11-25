@@ -4,9 +4,6 @@ import { useState, useEffect } from 'react';
 
 export const HomePage = () => {
   const [jokes, setJokes] = useState([]);
-  const [upLikes, setUpLikes] = useState(0);
-  const [downLikes, setDownLikes] = useState(0);
-
 
   useEffect(() => {
     const fetchJoke = async () => {
@@ -29,10 +26,8 @@ export const HomePage = () => {
             userAvatar={joke.avatar}
             userName={joke.name}
             text={joke.text}
-            likes={joke.likes + upLikes}
-            dislikes={joke.dislikes + downLikes}
-            onUpLikes={setUpLikes}
-            onDownLikes={setDownLikes}
+            likes={joke.likes}
+            dislikes={joke.dislikes}
           />
         );
       })}
